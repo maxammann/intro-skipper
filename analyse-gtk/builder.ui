@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object id="extract" class="GtkWindow">
+        <property name="visible">true</property>
+        <property name="title">Extracter</property>
+        <property name="border-width">10</property>
+        <child>
+            <object id="extract_root" class="GtkBox">
+                <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+                <child>
+                    <object id="extract_scale" class="GtkScale">
+                        <property name="visible">True</property>
+                        <property name="digits">1</property>
+                    </object>
+                </child>
+                <child>
+                    <object id="extract_preview" class="GtkImage">
+                        <property name="visible">True</property>
+                        <property name="file">/home/max/Pictures/43047bf6716ef54c59b302b122fdf24c.png</property>
+                        <property name="width-request">100</property>
+                    </object>
+                </child>
+                <child>
+                    <object id="extract_button" class="GtkButton">
+                        <property name="visible">True</property>
+                        <property name="label">Extract</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+    <object id="window" class="GtkWindow">
+        <property name="visible">True</property>
+        <property name="title">Analyser</property>
+        <property name="border-width">10</property>
+        <child>
+            <object id="root" class="GtkGrid">
+                <property name="visible">True</property>
+                <property name="orientation">vertical</property>
+                <child>
+                    <object id="analyse_input" class="GtkGrid">
+                        <property name="visible">True</property>
+                        <child>
+                            <object id="analyse_input_text" class="GtkLabel">
+                                <property name="visible">True</property>
+                                <property name="label">Analyse input:</property>
+                                <property name="margin-right">20</property>
+                            </object>
+                            <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">0</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object id="analyse_input_chooser" class="GtkFileChooserButton">
+                                <property name="visible">True</property>
+                                <property name="title">Analse input</property>
+                            </object>
+                            <packing>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">0</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object id="input_text" class="GtkLabel">
+                                <property name="visible">True</property>
+                                <property name="label">Input:</property>
+                            </object>
+                            <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">1</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object id="input_chooser" class="GtkFileChooserButton">
+                                <property name="visible">True</property>
+                                <property name="title">Input</property>
+                            </object>
+                            <packing>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">1</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object id="output_text" class="GtkLabel">
+                                <property name="visible">True</property>
+                                <property name="label">Output:</property>
+                            </object>
+                            <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">2</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object id="output_chooser" class="GtkFileChooserButton">
+                                <property name="visible">True</property>
+                                <property name="title">Output</property>
+                            </object>
+                            <packing>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">2</property>
+                            </packing>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object id="filter" class="GtkBox">
+                        <!--                         <property name="visible">True</property> -->
+                        <property name="margin-top">20</property>
+                        <child>
+                            <object id="filter_input" class="GtkEntry">
+                                <property name="visible">True</property>
+                                <property name="placeholder-text">Filter</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object id="filter_test" class="GtkEntry">
+                                <property name="visible">True</property>
+                                <property name="placeholder-text">Test</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <child>
+                    <object id="duration" class="GtkBox">
+                        <property name="visible">True</property>
+                        <child>
+                            <object id="start" class="GtkEntry">
+                                <property name="visible">True</property>
+                                <property name="placeholder-text">Start</property>
+                                <property name="margin-top">20</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object id="end" class="GtkEntry">
+                                <property name="visible">True</property>
+                                <property name="placeholder-text">End</property>
+                                <property name="margin-top">20</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+
+                <child>
+                    <object id="analyse" class="GtkButton">
+                        <property name="visible">True</property>
+                        <property name="label">Analyse</property>
+                        <property name="margin-top">20</property>
+                    </object>
+                </child>
+                <child>
+                    <object id="progress" class="GtkProgressBar">
+                        <property name="visible">True</property>
+                    </object>
+                </child>
+                <child>
+                    <object id="result" class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="margin-top">20</property>
+                        <child>
+                            <object id="result_scrollable" class="GtkScrolledWindow">
+                                <property name="visible">True</property>
+                                <property name="min-content-width">500</property>
+                                <property name="min-content-height">500</property>
+                                <child>
+                                    <object id="result_list" class="GtkTreeView">
+                                        <property name="visible">True</property>
+                                        <property name="margin-right">20</property>
+                                        <property name="reorderable">True</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object id="result_preview" class="GtkImage">
+                                <property name="visible">True</property>
+                                <property name="file">/home/max/Pictures/43047bf6716ef54c59b302b122fdf24c.png</property>
+                                <property name="width-request">100</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object id="result_box" class="GtkBox">
+                                <property name="visible">True</property>
+                                <child>
+                                    <object id="result_previous" class="GtkButton">
+                                        <property name="visible">True</property>
+                                        <property name="label">&lt;</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object id="result_next" class="GtkButton">
+                                        <property name="visible">True</property>
+                                        <property name="label">&gt;</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object id="save" class="GtkButton">
+                        <property name="visible">True</property>
+                        <property name="label">Save</property>
+                        <property name="margin-top">20</property>
+                    </object>
+                </child>
+
+                <child>
+                    <object id="quit" class="GtkButton">
+                        <property name="visible">True</property>
+                        <property name="label">Quit</property>
+                        <property name="margin-top">20</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
